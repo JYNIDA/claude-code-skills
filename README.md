@@ -1,53 +1,49 @@
-# The Thinking Mode — Claude Code Skills
+# Claude Code Skills
 
-Custom Claude Code skills for YouTube interview series content production.
+Custom Claude Code skills for YouTube content production workflow.
 
-Built for a global business & tech interview channel that explores how thinkers and builders navigate the AI era.
+Built for a global business & tech interview channel exploring how thinkers and builders navigate the AI era.
 
 ## Skills
 
-### 1. thinking-mode-pipeline
+| Skill | Purpose | Trigger |
+|-------|---------|---------|
+| **thinking-mode-pipeline** | 6-stage content pipeline: Trend → Validation → Decision → Outreach → Research → Questions | `/thinking-mode-pipeline` |
+| **copy-thinking-mode** | YouTube title/thumbnail/intro optimization with CTR scoring model | `/copy-thinking-mode` |
+| **copy-founder-focused** | Title/thumbnail optimization for founder interview series | `/copy-founder-focused` |
+| **interview-prep** | Guest research + topic development + question list | `/interview-prep` |
+| **weekly-meeting** | Weekly meeting prep: YouTube analytics + Slack status + meeting notes | `/weekly-meeting` |
+| **my-clarify** | Turn vague content planning into actionable specs | `/my-clarify` |
 
-6-stage content pipeline: Trend Scan → Guest Validation → Decision Gate → Outreach → Deep Research → Interview Questions
+## Highlight: thinking-mode-pipeline
 
-```
-/thinking-mode-pipeline              → Full pipeline overview
-/thinking-mode-pipeline validate <name>  → Validate a single guest
-/thinking-mode-pipeline validate-batch   → Batch validate multiple guests
-/thinking-mode-pipeline outreach <name>  → Draft outreach email
-/thinking-mode-pipeline research <name>  → Deep research briefing
-/thinking-mode-pipeline questions <name> → Interview question list
-```
-
-**Key features:**
-- 5-Dimension Guest Scoring (Authority, Media Charisma, Hot Take, Timeliness, Series Fit — each /5)
-- Yama: one-line angle that defines the episode's core thesis
-- Timely vs Evergreen tagging for outreach prioritization
-- Parallel batch validation with agent teams
-- Fact-checking step built into the process
-
-### 2. copy-thinking-mode
-
-YouTube title, thumbnail text, and intro hook optimization with a predictive CTR scoring model.
+The most comprehensive skill — a full content production pipeline:
 
 ```
-/copy-thinking-mode
+/thinking-mode-pipeline              → Overview + stage selection
+/thinking-mode-pipeline trend        → Stage 1: Trend Radar
+/thinking-mode-pipeline validate <name>  → Stage 2: Guest Validation
+/thinking-mode-pipeline validate-batch   → Stage 2: Batch Validation
+/thinking-mode-pipeline decide       → Stage 3: Decision Gate
+/thinking-mode-pipeline outreach <name>  → Stage 4: Outreach Email
+/thinking-mode-pipeline research <name>  → Stage 5: Deep Research
+/thinking-mode-pipeline questions <name> → Stage 6: Interview Questions
 ```
 
-**Key features:**
-- CTR Scoring Model v6 (base rate + pattern bonuses)
-- Title/thumbnail concept cards with predicted CTR
-- Hook line brainstorming
+**Key concepts:**
+- **5-Dimension Guest Scoring** — Authority, Media Charisma, Hot Take, Timeliness, Series Fit (each /5)
+- **Yama** — One-line angle defining the episode's core thesis
+- **CTR Scoring Model v6** — Predictive click-through rate based on title/thumbnail patterns
+- **Timely vs Evergreen** — Prioritize outreach by news cycle windows
 
-## How Claude Code Skills Work
+## Setup
 
-Each skill is a folder with a `SKILL.md` that tells Claude Code:
-- When to activate (trigger keywords)
-- What to do step-by-step
-- What format to output
-- What reference files to use (templates, scoring models)
+1. Clone into `~/.claude/skills/`
+2. For `weekly-meeting`: copy `config/config.example.json` → `config/config.json` and add your API keys
 
-Type a trigger like `/thinking-mode-pipeline validate Sam Altman` and Claude Code follows the instructions autonomously.
+## How Skills Work
+
+Each skill = a folder with `SKILL.md` that tells Claude Code what to do, step by step. Type a trigger and it runs autonomously.
 
 ## License
 

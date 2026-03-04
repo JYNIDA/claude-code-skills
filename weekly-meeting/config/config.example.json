@@ -1,0 +1,44 @@
+{
+  "youtube": {
+    "api_key": "YOUR_YOUTUBE_DATA_API_V3_KEY",
+    "channel_id": "AUTO_DETECTED_OR_MANUAL",
+    "channel_handle": "@eoglobal"
+  },
+  "targets": {
+    "subscribers": 1000000,
+    "monthly_views": null,
+    "mega_hit_threshold": 500000,
+    "hit_threshold": 200000
+  },
+  "slack": {
+    "enabled": true,
+    "channels": [
+      "#team-gl-media",
+      "#gl-youtube-operations",
+      "#team-gl-business"
+    ],
+    "search_keywords": [
+      "촬영",
+      "편집",
+      "업로드",
+      "섭외",
+      "인터뷰",
+      "filming",
+      "editing",
+      "upload",
+      "outreach"
+    ]
+  },
+  "output": {
+    "directory": "~/Documents/meeting-notes",
+    "filename_pattern": "weekly-YYYY-MM-DD.md",
+    "copy_to_clipboard": true
+  },
+  "analysis": {
+    "potential_hit_multiplier": 2.0,
+    "underperformer_multiplier": 0.5,
+    "significant_change_threshold": 0.3,
+    "top_n_exclude_for_baseline": 3,
+    "lookback_days": 30
+  }
+}
