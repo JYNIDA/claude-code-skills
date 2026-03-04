@@ -4,3 +4,13 @@
 # macOS
 .DS_Store
 **/.DS_Store
+
+# Installed skills (symlinks from npx skills add)
+# These can be reinstalled with: npx skills add ai-native-camp/camp-2 --agent claude-code --yes
+compound
+content-digest
+fetch-tweet
+history-insight
+session-analyzer
+session-wrap
+team-assemble
