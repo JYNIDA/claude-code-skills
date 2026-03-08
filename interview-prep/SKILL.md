@@ -17,7 +17,7 @@ description: EO Global 인터뷰이 리서치 + 주제 잡기 + 질문지 작성
 
 ## 워크플로우
 
-**반드시 `~/Desktop/Cowork/Research workflow/eo_interview_research_workflow_v1.md`를 먼저 읽고** 전체 프로세스를 따른다.
+**반드시 `~/.claude/skills/references/eo_interview_research_workflow.md`를 먼저 읽고** 전체 프로세스를 따른다.
 
 ### Step 1: 입력 확인
 
