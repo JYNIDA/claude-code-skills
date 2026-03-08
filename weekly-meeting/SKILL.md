@@ -107,7 +107,7 @@ Slack MCP 도구를 사용하여 프로덕션 진행상황 수집:
 
 ### 1-D. 주간 비교
 
-- `~/Documents/meeting-notes/` 에서 가장 최근 `weekly-*.md` 파일 찾기
+- `~/Desktop/Cowork/meeting-notes/` 에서 가장 최근 `weekly-*.md` 파일 찾기
 - 파일이 있으면: 이전 주 지표 파싱 → 변화량(delta) 계산
 - 파일이 없으면: "vs Last Week" 컬럼 = "N/A (first run)"
 
@@ -200,12 +200,12 @@ AskUserQuestion을 사용하여 질문:
   - 한국어 맥락이 필요한 경우 괄호 안에 원문 병기
 
 ### 4-C. 파일 저장
-1. 디렉토리 확인/생성: `~/Documents/meeting-notes/`
-2. 마크다운 저장: `~/Documents/meeting-notes/weekly-YYYY-MM-DD.md`
+1. 디렉토리 확인/생성: `~/Desktop/Cowork/meeting-notes/`
+2. 마크다운 저장: `~/Desktop/Cowork/meeting-notes/weekly-YYYY-MM-DD.md`
 3. 클립보드 복사: `pbcopy`
 
 ### 4-D. 차트 HTML 생성
-1. `~/Documents/meeting-notes/weekly-YYYY-MM-DD-chart.html` 저장
+1. `~/Desktop/Cowork/meeting-notes/weekly-YYYY-MM-DD-chart.html` 저장
 2. 다크 테마 standalone HTML (Chart.js CDN 사용, 서버 불필요)
 3. 포함 차트:
    - **KPI Cards**: 구독자, 월간 조회수, 메가히트/히트 수, 베이스라인 평균
@@ -227,8 +227,8 @@ Monthly Views: X.XM (vs target: +XX%)
 Mega-hits: X | Hits: X | Underperformers: X
 Top: "Video Title" (XXX,XXX views)
 ────────────────────────────────────────
-Saved: ~/Documents/meeting-notes/weekly-YYYY-MM-DD.md
-Chart: ~/Documents/meeting-notes/weekly-YYYY-MM-DD-chart.html
+Saved: ~/Desktop/Cowork/meeting-notes/weekly-YYYY-MM-DD.md
+Chart: ~/Desktop/Cowork/meeting-notes/weekly-YYYY-MM-DD-chart.html
 Copied to clipboard.
 ```
 
