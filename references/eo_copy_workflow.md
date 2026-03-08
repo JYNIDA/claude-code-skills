@@ -1,6 +1,9 @@
-# EO Global Copy Workflow v6.1
+# EO Global Copy Workflow v6.2
 ## 데이터 기반 제목·썸네일·인트로 최적화 프로세스
 
+> v6.1 → v6.2 업데이트: Thinking Mode EP3 (Rem Koning, Harvard Business School) **게시 후 실제 성과 데이터** 반영
+> 핵심 추가: 리텐션 체크포인트(CTR보다 리텐션 우선), 학술 게스트 인트로 리스크 원칙, "AI-native" 키워드 등급 상향, 추상 콘셉트 클릭 드라이버 회피 패턴, 시의성 없는 게시의 리스크
+> EP3 결과: CTR 5.08%, 노출 283K, 조회수 21.4K — BUT 리텐션 25.91%(4:44/18:17)로 D+2에 급사. 원인: 인트로-제목 불일치
 > v6 → v6.1 업데이트: Thinking Mode EP2 (Drew Bent, Anthropic) 기획 실전 적용 결과 반영
 > 핵심 추가: 썸네일 변형 시스템(3 Variation Types), 콘셉트 15개로 확장, Title+Thumbnail 조합 세트 출력 포맷
 > v5.1 → v6 업데이트: Rem Koning (Harvard Business School) 영상 기획 실전 적용 결과 반영
@@ -229,7 +232,7 @@
 | **agentic coding / engineering** | ★★★☆☆ | Anthropic 리포트 제목. 업계/기업 레벨에서 많이 쓰임. 대중 인지도는 아직 낮음 |
 | **MCP (Model Context Protocol)** | ★★★☆☆ | 1,000+ 커뮤니티 서버. 개발자 사이에서 급성장. 비개발자에겐 생소 |
 | **AI writes 30% of code** | ★★★☆☆ | Microsoft/Google CEO 발언. 충격적 수치로 대중 기사에 자주 인용 |
-| **AI-native** | ★★☆☆☆ | 범용적이지만 그 자체로 바이럴은 아님. **썸네일/제목에서 "AI-native organization" 같은 조합은 전문 용어 페널티 적용** |
+| **AI-native** | ★★★★☆ | v6.2 상향: EP3 A/B에서 "Top 1% AI-native Org" + K-그래프가 3라운드 걸쳐 일관적 최상위 (WTS 44.4%, 51.4%). **단, 구체적 비주얼(K-그래프) + aspirational 프레이밍("Top 1%")과 결합할 때만 작동.** 단독 사용 시 여전히 전문 용어 리스크 |
 
 > **활용 원칙:** 바이럴 강도 ★★★★ 이상인 키워드가 영상 내용과 겹치면 적극 사용. ★★★ 이하는 맥락이 정확히 맞을 때만.
 
@@ -371,7 +374,7 @@
 | **인트로와 연결** | 인트로 내러티브와 제목의 방향이 일치해야 시청 지속시간 유지 |
 | **한 문장 원칙** | 제목은 가급적 한 문장으로. 문장이 두 개면 짧은 문장끼리 조합 |
 | **100자 제한 (v5)** | YouTube 제목은 **최대 100자**. 파이프(\|) + 게스트명/소속 포함해서 100자 이내. 80자 이내가 이상적 |
-| **"From X to Y" 변환형 우선 (v5)** | "How to" 튜토리얼보다 변환 내러티브가 클릭률이 높음 (38% vs 29.9%) |
+| **"From X to Y" 변환형 (v5)** | 변환 내러티브가 클릭률이 높음 (A/B WTS 38%) |
 | **직접 도발 > 중립 관찰 (v5)** | "Most Engineers Aren't Ready"(도발) > "What the Top 1% Do Differently"(관찰) |
 | **파이프 뒤 기관명 중복 방지 (v5)** | 썸네일에 "Stanford" 이미 있으면 제목 파이프 뒤에서 생략 가능 |
 
@@ -444,7 +447,6 @@ CTR 예측: X.XX%
 |------|------|------|
 | **업계 전문 용어 + 101/가이드 톤** | "Agentic Engineering 101" + "How to Manage Multiple AI Agents Like a Top 1% Engineer" | WTS 29.9% — 3세트 중 최하위 |
 | **타겟 한정 라벨** | "Junior Dev: Are We Cooked?" | WTS 32.1% — "Junior"가 시니어/리드를 이탈시킴 |
-| **"How to" 튜토리얼 프레임** | "How to Manage Multiple AI Agents Like a Top 1% Engineer" | "From X to Y" 변환형(38%)에 완패(29.9%) |
 | **중립 관찰 톤** | "What the Top 1% Do Differently" | 도발형(38%)에 밀림(32.1%) |
 | **소모된 YouTube 공식 (v5)** | "The Mistake 90% of Engineers Make With~" | 2차 A/B WTS 37.3% |
 | **실수 지적(Guilt) 프레임 (v5)** | 썸네일 "More Agents ≠ Better Code" + 제목 "The Mistake 90%~" | 정체성 제안이 62.7%로 압도 |
@@ -456,6 +458,8 @@ CTR 예측: X.XX%
 | HR/전문가 톤 | "How to Find the Best Talent" | 시청자 자기투영 불가 |
 | 썸네일-제목 주제 불일치 | 썸네일: Talent / 제목: Future | 두 개의 다른 영상처럼 보임 |
 | 스테레오타입 비주얼 (v6 신규) | 아프리카 = 먼지길/빈곤 이미지 | aspirational 톤 파괴, 해당 국가 시청자 이탈 |
+| **추상 콘셉트를 클릭 드라이버로 (v6.2 신규)** | "Capital → Intelligence", "Allocate Intelligence" | EP3 A/B WTS 24% (최하위). 영상 핵심 인사이트여도 대중적 클릭 드라이버로는 안 먹힘. 내부 콘텐츠용 ≠ 패키징용 |
+| **학술 톤 인트로 (v6.2 신규)** | "I wrote this paper three years ago..." | EP3: 0:00~1:00에서 90%→45% 절벽 이탈. 연구 배경 오프닝 = 리텐션 킬러. 결론/도발을 먼저 배치해야 함 |
 
 ---
 
@@ -489,7 +493,7 @@ CTR 예측: X.XX%
 | **스케일 차이** | 각 요소가 서로 다른 깊이의 정보를 전달하는가 | 썸네일 = 제목 = 인트로가 모두 "AI가 격차를 벌린다"만 반복 → 정보 밀도 제로 |
 | **인트로가 약속을 증명하는가** | 클릭 이유(썸네일/제목)를 60초 안에 뒷받침하는가 | 썸네일: "10x Revenue" → 인트로에서 revenue 언급 없음 → 기대 불일치 |
 
-#### 인트로 설계 6원칙 (v6 신규)
+#### 인트로 설계 7원칙 (v6.2 업데이트)
 
 | 원칙 | 설명 | 실전 근거 |
 |------|------|----------|
@@ -499,6 +503,19 @@ CTR 예측: X.XX%
 | **4. 게스트의 직접 발언 활용** | 내레이션보다 게스트가 직접 말하는 클립이 신뢰도 높음 | 학술 게스트(교수)의 경우 특히 효과적. "Harvard 교수가 직접 이 말을 했다" 임팩트 |
 | **5. 썸네일 약속을 15초 안에 터치** | 시청자는 썸네일 보고 클릭했음. 15초 안에 "아 맞다, 이 영상 그 얘기구나" 확인이 안 되면 이탈 | 썸네일이 "TOP 1% AI FOUNDERS"면 인트로 첫 문장에서 "gap" 또는 "top vs rest" 언급 필요 |
 | **6. 인트로 끝 = 영상의 핵심 프레임 선언** | 인트로 마지막 문장이 영상 전체를 관통하는 핵심 프레임워크/용어를 처음 제시 | "Your ability to allocate intelligence" — 인트로 끝에서 이 프레임을 던지고, 영상 본문에서 풀어감 |
+| **7. 학술 게스트: 결론 먼저, 연구 배경 나중 (v6.2 신규)** | 학술 게스트가 "I wrote this paper..." "Our study found..."로 시작하면 → 학술 톤 → 일반 시청자 대량 이탈. **결론/도발을 먼저 배치하고, 연구 배경은 뒤에** | EP3 Rem Koning: "I wrote this paper three years ago... Kenya"로 시작 → 0:00~1:00에서 90%→45% 절벽 이탈. 제목("This Is How AI-Native Companies Actually Operate")과 인트로(케냐 연구 배경)가 불일치 |
+
+> **v6.2 핵심 추가 — 학술 게스트 인트로 리스크:**
+>
+> 학술 게스트(교수, 연구자)는 자연스럽게 연구 배경으로 시작하려 함. "I wrote this paper...", "Our study of 500 founders...", "Three years ago we tested..." — 이런 오프닝은 학회에서는 적절하지만, **YouTube에서는 리텐션 킬러.**
+>
+> | 인트로 오프닝 | 예상 30초 리텐션 | 이유 |
+> |-------------|:--------------:|------|
+> | 연구 배경 ("I wrote this paper three years ago about Kenya") | **59% 이하** | 학술 톤 + 오래된 느낌 + 나와 무관 |
+> | 도발/결론 먼저 ("The most dangerous assumption founders make...") | **70%+** | 자기투영 + 즉시 관련성 |
+> | 충격 데이터 먼저 ("AI made some founders 10% poorer") | **70%+** | 반직관 + 궁금증 |
+>
+> **해결법:** 편집 단계에서 인트로를 재구성. 스크립트 본론에서 가장 도발적인 클립을 뽑아서 영상 첫 10초에 배치. 연구 배경은 자기소개 이후에.
 
 #### 인트로 설계 프로세스
 
@@ -629,7 +646,6 @@ CTR 예측: X.XX%
 - Overused formula:      -0.30%  ← 소모된 YouTube 공식
 - Target limiter:        -0.20%  ← 특정 직급/레벨로 타겟 한정
 - Guilt framing:         -0.20%  ← 실수 지적 프레임
-- Tutorial framing:      -0.15%  ← "How to" / "101" / "Guide" 튜토리얼 톤
 - Spam-attracting generic:-0.15% ← 너무 범용적인 성공/부자 키워드 → 봇 유입
 - Trigger AVOID:          -0.15% ← (entrepreneur, lessons, ceo, advice)
 ```
@@ -674,7 +690,6 @@ Base:                      3.11%
 - Target limiter:         -0.20%   (타겟 한정 라벨)        ← v5
 - Guilt framing:          -0.20%   (실수 지적 프레임)      ← v5 2차
 - Stereotype visual:      -0.20%   (스테레오타입 비주얼)    ← v6 신규
-- Tutorial framing:       -0.15%   (How to / 101 / Guide)  ← v5
 - Spam-attracting generic:-0.15%   (범용적 성공/부자 키워드)  ← v5.1
 - Abstract identity:      -0.15%   (1초 가독성 실패 정체성)  ← v6 신규
 - Trigger AVOID:          -0.15%   (entrepreneur, lessons, ceo, advice)
@@ -839,7 +854,7 @@ H+48 ── 48시간 확정
 | B | More Agents ≠ Better Code | The Mistake 90% of Engineers Make With AI Coding Agents | 37.3% |
 
 **핵심 학습 (1차 + 2차 종합):**
-1. **"From X to Y" 변환형 > "How to" 튜토리얼형** — 38% vs 29.9%
+1. **"From X to Y" 변환형이 강력한 패턴** — A/B WTS 38%
 2. **직접 도발("Aren't Ready") > 중립 관찰("Do Differently")** — 시청자를 겨냥해야 클릭
 3. **버전 넘버링("3.0")이 최강 자기투영 트리거** — 모든 레벨의 엔지니어가 "나는 몇 점대?" 자문
 4. **넓은 타겟("Software Engineer") > 좁은 타겟("Junior Dev")** — Browse 70.7%의 원동력
@@ -850,38 +865,54 @@ H+48 ── 48시간 확정
 
 ---
 
-### Case 3: Intelligence EP2 (Rem Koning) — v6 신규, 기획 단계
-
-> **이 케이스는 아직 게시 전이므로 기획 과정의 학습만 기록. 게시 후 실제 성과 데이터로 업데이트 필요.**
+### Case 3: Thinking Mode EP3 (Rem Koning) — v6.2 업데이트, 게시 후 실제 결과
 
 **게스트:** Rem Koning | Harvard Business School, Professor of Entrepreneurship & AI
 **유명도:** 업계 유명 — "Harvard"가 신뢰 훅. 이름 자체는 대중 인지도 낮음
+**영상 길이:** 18:17
+**게시일:** 2026-03-05
 
-**기획 과정에서 확정된 3세트:**
+**최종 성과:**
 
-| 세트 | 썸네일 | 비주얼 | 제목 |
-|------|--------|--------|------|
-| **A** | TOP 1% AI FOUNDERS | K-그래프 (초록 +20% / 빨강 -10%) + Rem | Harvard Studied 500 AI Founders. The Top 1% Don't Build Like Everyone Else \| Rem Koning |
-| **B** | CAPITAL → INTELLIGENCE | Buffett 비주얼 + 변환 화살표 + Rem | From Allocating Capital to Allocating Intelligence. Most Founders Aren't Ready \| Harvard, Rem Koning |
-| **C** | (글로브 + 국가명) | 지구본 위 Kazakhstan, Kenya, Thailand, Uruguay, India, Nigeria | (제목 미확정 — "TRILLION-DOLLAR COMPANIES WON'T COME FROM SILICON VALLEY" 방향) |
+| 지표 | 수치 | 판정 |
+|------|:----:|:----:|
+| 조회수 | 21,454 | ✅ |
+| 노출 | 283,112 | ✅ |
+| CTR | 5.08% | ⚠️ |
+| 평균 시청 지속시간 | 4:44 / 18:17 | ❌ |
+| 평균 조회율 | 25.91% | ❌ |
+| Browse features | 73.4% | ✅ |
+| Suggested | 11.9% | ⚠️ |
+| 구독자 | +127 | ✅ |
 
-**인트로 구조 (확정):**
-- 두 축: 격차(gap) + 지능 배분(allocate intelligence)
-- Fear open → Aspiration land
-- 핵심 클립: "Is the gap growing?" → 케냐 10% decline → "Even GPT-5 wouldn't help" → "Your ability to allocate intelligence"
+**A/B 테스트 3라운드 결과:**
 
-**기획 과정 학습:**
+| 라운드 | 우승 세트 | WTS |
+|:------:|----------|:---:|
+| 1차 | K-graph + "Top 1% AI-native Org" + "This Is How AI-Native Companies Actually Operate" | **44.4%** |
+| 2차 | Globe + "The Next Playing Field" + "AI Will Create More Entrepreneurs Than Silicon Valley Ever Did" | **34.3%** (근소) |
+| 3차 | K-graph + "Top 1% AI-native Org" + "This Is How AI-Native Companies Actually Operate" | **51.4%** |
+
+**사망 패턴:**
+```
+D+0: Browse 73.4%로 알고리즘 부스트 → 5,863 views
+D+1: 피크 11,351 views
+D+2: -62% 급락 → 4,240 views (알고리즘이 리텐션 보고 추천 중단)
+D+3: 거의 사망
+```
+
+**핵심 학습 (게시 후 — v6.2 신규):**
 
 | 학습 | 상세 |
 |------|------|
-| **"STOP USING CHATGPT" = 철지난 트렌드** | 팀 피드백: "요즘 누가 챗지피티 쓰냐." → 트렌드 키워드의 수명을 판단해야 함. v6에 "Stale trend" 감점 추가 |
-| **Aspirational Identity는 직군을 넘어 적용 가능** | "Software Engineer 3.0" 패턴을 파운더에게도 적용 가능하나, 추상적 조합("Intelligence Allocator")보다 "직군+버전"("Founder 2.0") 형식이 더 즉각적 |
-| **1초 가독성 테스트 필요** | "Intelligence Allocator"는 두 단어 모두 추상적 → 비주얼 보조 없이는 즉시 이해 어려움 → v6에 가독성 원칙 추가 |
-| **Three-Combo 정렬의 중요성** | 썸네일+제목만 맞추면 안 됨. 인트로까지 같은 방향을 가리켜야 시청 유지. 인트로가 격차인데 썸네일이 경제 변환이면 불일치 |
-| **스크립트 숫자 검증 필수** | "10x Revenue"는 스크립트에 직접 나오지 않는 숫자. 실제 표현은 "20% productivity boost" — 확인 안 하면 클릭베이트 비난 리스크 |
-| **30초 소재 확대 리스크 재확인** | "Trillion dollar companies" = 30초 언급. 메인 콘셉트로 쓰려면 편집에서 해당 섹션 확장 필수. 아니면 기대 불일치 |
-| **스테레오타입 회피 = 국가명 텍스트** | 글로벌 앵글에서 아프리카 빈곤 이미지 대신 국가 이름 텍스트가 더 깔끔하고 aspirational. 반드시 스크립트에서 언급된 국가만 사용 |
-| **티키타카(반복 이터레이션) 프로세스** | 10개 콘셉트 → 3세트 추천 → PD 피드백 → 수정 → 다시 피드백 → 수정... 문서 업데이트는 최종 확정 후에. 대화로 먼저 방향 잡기 |
+| **CTR OK + 리텐션 실패 = 급사** | CTR 5.08%는 알고리즘이 밀어줄 만했음. 실제로 D+1까지 밀어줌(Browse 73.4%). 근데 리텐션 25.91%라 알고리즘이 "시청자가 안 본다" 판정 → 추천 중단 → 급사 |
+| **리텐션 절벽: 0:00~1:00에서 90%→45%** | 인트로 "I wrote this paper three years ago... Kenya"가 리텐션 킬러. "paper" = 학술 톤, "three years ago" = 오래된 느낌, "Kenya" = 타겟(테크/스타트업)과 거리감. **첫 10초에 세 가지 이탈 트리거가 동시 작동** |
+| **Three-Combo 불일치 실전 증명** | 제목("This Is How AI-Native Companies Actually Operate") → 기대: AI-native 전략/방법. 인트로: 케냐 WhatsApp 연구. 갭 = 대량 이탈. **Three-Combo 정렬은 이론이 아니라 생존 조건** |
+| **"AI-native" 키워드 재평가** | 워크플로우 ★★☆☆☆(전문용어 페널티) 예측이 틀림. 3라운드 A/B에서 "Top 1% AI-native Org" + K-그래프가 일관적 최상위. **구체적 비주얼 + aspirational 프레이밍 결합 시 전문용어 페널티 상쇄됨** → ★★★★☆ 상향 |
+| **"Allocate Intelligence" = 패키징에 안 먹힘** | Capital → Intelligence 콘셉트: WTS 24% (최하위). 영상의 핵심 인사이트이자 가장 강력한 프레임이지만, 대중적 클릭 드라이버로는 너무 추상적. **내부 콘텐츠 프레임 ≠ 외부 패키징 프레임** |
+| **학술 게스트 인트로 리스크** | 학술 게스트는 연구 배경으로 시작하는 게 자연스럽지만, YouTube에서는 "paper" "years ago" "study" = 강의 톤 → 이탈. 편집에서 결론/도발을 앞으로 당겨야 함 |
+| **시의성 이벤트 없음 = 짧은 부스트** | EP1은 Cursor Cloud Agents 발표 직후(시의성 ★★★★★). EP3는 매칭되는 뉴스/이벤트 없음. Browse 부스트가 D+1에서 끊김 |
+| **기획 단계 학습 유지** | "STOP USING CHATGPT" 철지난 트렌드, 1초 가독성, 스테레오타입 회피, 스크립트 숫자 검증 — 모두 여전히 유효 |
 
 ---
 
@@ -1021,7 +1052,7 @@ EO 카피 생성 요청 템플릿 (v6)
 - 스테레오타입 비주얼 금지 (개발도상국 = 빈곤 등) (v6)
 - 제목에 em dash(—) 쓰지 마
 - 제목은 파이프+게스트명 포함 100자 이내 (80자 이내 이상적)
-- "How to" 튜토리얼보다 "From X to Y" 변환형 우선
+- "From X to Y" 변환형은 검증된 강력한 패턴
 - 제목에 직접 도발 톤 포함 ("Aren't Ready", "No One Taught You This" 등)
 - 새로운 정체성/프레임워크 제안 > 실수 지적
 - "The Mistake X% Make" 같은 소모된 YouTube 공식 쓰지 마
@@ -1061,8 +1092,7 @@ Trigger USE: +0.15% (how, built, raised, startup, founder)
 Jargon penalty: -0.30% | Overused formula: -0.30%
 Stale trend: -0.25% | Target limiter: -0.20%
 Guilt framing: -0.20% | Stereotype visual: -0.20%
-Tutorial framing: -0.15% | Spam-attracting generic: -0.15%
-Abstract identity: -0.15%
+Spam-attracting generic: -0.15% | Abstract identity: -0.15%
 Trigger AVOID: -0.15% (entrepreneur, lessons, ceo, advice)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1115,7 +1145,7 @@ Trigger AVOID: -0.15% (entrepreneur, lessons, ceo, advice)
 | **썸네일 원칙** | 7원칙 | **9원칙** (정보 밀도, 타겟 범위 추가) |
 | **제목 원칙** | 7원칙 | **10원칙** ("From X to Y" 변환형 우선, 직접 도발 > 중립 관찰, 파이프 중복 방지 추가) |
 | **검증 패턴** | 자기투영 + AI 키워드 위주 | **새로운 정체성 제안 + 버전 넘버링 + 변환 내러티브 + 직접 도발 (1차 WTS 38%, 2차 WTS 62.7%) 최고신뢰 등록** |
-| **회피 패턴** | 모호한 태그 위주 | **전문 용어, 타겟 한정, "How to" 튜토리얼, 중립 관찰, 소모된 YouTube 공식, 실수 지적(Guilt) 프레임 추가** |
+| **회피 패턴** | 모호한 태그 위주 | **전문 용어, 타겟 한정, 중립 관찰, 소모된 YouTube 공식, 실수 지적(Guilt) 프레임 추가** |
 | **스코어링 모델** | 가산만 | **감산 요소 5개 추가** |
 | **스코어링 가산** | Self-projection +0.30% | **Novel identity +0.50%, Transformation +0.50%, Direct challenge +0.30%, Version numbering +0.30%, Concept partial reveal +0.30% 추가** |
 | **호환성 체크** | 8항목 | **10항목** (타겟 한정 여부, 정보 밀도 추가) |
@@ -1128,5 +1158,18 @@ Trigger AVOID: -0.15% (entrepreneur, lessons, ceo, advice)
 
 ---
 
-*EO Global Copy Workflow v6.1 — March 5, 2026*
-*Based on: 355-video dataset + Intelligence EP1 (Po-Shen Loh, CTR 6.0~7.3%) + Thinking Mode EP1 (Mihail Eric, CTR 6.0%, A/B 1차 WTS 38%, 2차 WTS 62.7%) + 3회 실전 A/B 테스트 학습 + 4개 영상 397개 댓글 분석 + Intelligence EP2 (Rem Koning, Harvard Business School) 기획 적용 + Thinking Mode EP2 (Drew Bent, Anthropic) 기획 적용*
+## v6.1 → v6.2 변경 요약
+
+| 항목 | v6.1 | v6.2 (Thinking Mode EP3 Rem Koning 실제 결과 반영) |
+|------|------|------|
+| **"AI-native" 키워드** | ★★☆☆☆ (전문용어 감점) | **★★★★☆ (조건부)** — K-graph + 비전형적 프레이밍("Top 1%")과 조합 시 WTS 44.4%→51.4% 연속 1위. 단독 사용은 여전히 감점 |
+| **인트로 설계 원칙** | 6원칙 | **7원칙** — "학술 게스트: 결론 먼저, 연구 배경 나중" 추가. EP3에서 "I wrote this paper three years ago, Kenya..." 오프닝 → 60초 내 90%→45% 이탈 확인 |
+| **회피 패턴** | 14개 | **16개** — "추상 콘셉트를 클릭 드라이버로" (Capital→Intelligence 24% WTS 최하위) + "학술 톤 인트로" (90%→45% cliff drop) 추가 |
+| **검증 사례 (Case 3)** | Rem Koning 기획 단계 기록 | **실제 결과 반영** — CTR 5.08%, AVD 4:44, 25.91% viewed, 21,454 views (3일), A/B 3라운드 전체 기록, 사망 원인 분석 |
+| **CTR vs 리텐션** | 암묵적으로 CTR 우선 | **명시적 원칙**: CTR이 카피 워크플로우 #1 우선순위. 리텐션은 인트로 설계 단계(Step 3.5)에서 체크하되, 카피 의사결정의 최우선 기준은 CTR |
+| **Three-Combo 미스매치** | 원칙만 존재 | **실패 사례 문서화** — 제목("How AI-Native Companies Operate") vs 인트로("Kenya WhatsApp paper") 미스매치 → 리텐션 붕괴 → 알고리즘 철수 |
+
+---
+
+*EO Global Copy Workflow v6.2 — March 8, 2026*
+*Based on: 355-video dataset + Intelligence EP1 (Po-Shen Loh, CTR 6.0~7.3%) + Thinking Mode EP1 (Mihail Eric, CTR 6.0%, A/B 1차 WTS 38%, 2차 WTS 62.7%) + 3회 실전 A/B 테스트 학습 + 4개 영상 397개 댓글 분석 + Intelligence EP2 (Rem Koning, Harvard Business School) 기획 적용 + Thinking Mode EP2 (Drew Bent, Anthropic) 기획 적용 + **Thinking Mode EP3 (Rem Koning) 실제 결과** (CTR 5.08%, A/B 3라운드, 리텐션 실패 분석)*
