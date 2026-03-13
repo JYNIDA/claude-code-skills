@@ -14,3 +14,22 @@ history-insight
 session-analyzer
 session-wrap
 team-assemble
+
+# GEO plugin skills (installed, not custom)
+geo
+geo-audit
+geo-brand-mentions
+geo-citability
+geo-content
+geo-crawlers
+geo-llmstxt
+geo-platform-optimizer
+geo-report
+geo-report-pdf
+geo-schema
+geo-technical
+
+# Plugin metadata
+.agents/
+.claude/
+skills-lock.json
