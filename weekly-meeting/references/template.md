@@ -8,27 +8,32 @@
 
 ### Channel Overview [AUTO]
 
-| Metric | Current | Target | vs Target | vs Last Week | Trend |
-|--------|---------|--------|-----------|--------------|-------|
-| Subscribers | | 1,000,000 | | | |
-| Monthly Views (30d) | | | | | |
-| Mega-hits (500K+) | | | | | |
-| Hits (200-500K) | | | | | |
-| Baseline avg (excl. Top 3) | | | | | |
-| Direct Traffic % | [MANUAL] | | | | |
-| CTR | [MANUAL] | | | | |
+| Metric | This Week | Prev Week | Delta | Trend |
+|--------|-----------|-----------|-------|-------|
+| Subscribers | | | | |
+| Weekly Views (7d) | | | | |
+| Videos Published | | | | |
+| Long-form Views | | | | |
+| Shorts Avg Views | | | | |
+| CTR | [MANUAL] | | | |
 
 **This week's result (1 sentence):** [AUTO]
 >
 
-### Video Performance [AUTO]
+### Video Performance — This Week [AUTO]
 
-| # | Title | Published | Views | Likes | Comments | Grade | Flag |
-|---|-------|-----------|-------|-------|----------|-------|------|
-| 1 | | | | | | | |
+| # | Title | Published | Views | Likes | Comments | Notes |
+|---|-------|-----------|------:|------:|----------|-------|
+| 1 | | | | | | |
 
-**Grade legend:** MEGA-HIT (500K+) | HIT (200-500K) | BASELINE | UNDERPERFORMER
-**Flag legend:** POTENTIAL HIT (2x baseline) | UNDERPERFORMING (0.5x baseline) | SIGNIFICANT CHANGE (vs last week)
+### Previous Week Carryover (still growing) [AUTO]
+
+| Title | Views (start of week) | Views (now) | WoW Growth |
+|-------|----------------------:|------------:|-----------:|
+| | | | |
+
+**Key patterns:**
+-
 
 ---
 

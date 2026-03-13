@@ -946,6 +946,36 @@ D+3: 거의 사망
 
 ---
 
+### Case 5: Founder Focused EP (Max Junestrand, Legora) — A/B 진행 중 (2026-03-12 기록)
+
+**게스트:** Max Junestrand | Legora, CEO & Co-founder
+**유명도:** 업계 유명 — "Legora" 법률 AI 스타트업. 이름 대중 인지도 낮음
+**영상 길이:** 9:53
+**게시일:** 2026-03-11 (추정)
+**기록 시점:** A/B 진행 중, 잔여 13일 20시간
+
+**A/B 테스트 중간 결과 (초반 데이터):**
+
+| 세트 | 썸네일 | 제목 | WTS |
+|------|--------|------|:---:|
+| A | "He Just Raised $550M. He's 26." + 성장 그래프 | No Legal Background. Then He Built A $5.5B AI Company \| Legora, Max Junestrand | 39.0% |
+| **B** | **"$0 at 23 y/o → $5.5B at 26 y/o" (Before→After)** | **He Built a $5.5B AI Company by 26 \| Legora, Max Junestrand** | **41.4%** |
+| C | "$0 at 23 y/o → $5.5B in 2 years" | Wall Street's Top Law Firms Bet on a 26-Year-Old Swede. $5.5B AI Company \| Legora, Max Junestrand | 19.7% |
+
+> ⚠️ 아직 테스트 진행 중. A↔B 격차(2.4%)는 최종 확정 전임. 최종 성과 데이터는 D+37에 업데이트 필요.
+
+**핵심 학습:**
+
+| 학습 | 상세 |
+|------|------|
+| **메시지 일관성 > 훅 강도** | A의 "No Legal Background" 훅이 더 창의적이고 흥미롭지만, 썸네일($550M)↔제목($5.5B) 숫자 불일치가 인지 비용 유발. B의 단순한 구조가 이김. **썸네일-제목 숫자가 다르면 무조건 수정** |
+| **Before→After 수치 단순화가 가장 강력** | B 썸네일 "$0 at 23 y/o → $5.5B at 26 y/o"는 3개 정보(시작금액, 나이, 도착금액+나이)가 Before→After 하나의 서사로 읽힘. 시청자가 "23살→26살, 3년 만에" 계산을 즉시 완성. Age Contrast + Transformation + Traction Numbers 동시 작동 |
+| **국적 식별자는 타겟 리미터** | C의 "26-Year-Old Swede"가 C 최하위의 핵심 원인 중 하나. 스웨덴에 관심 없는 시청자는 즉시 자신의 이야기가 아닌 것으로 인식. 국적은 영상 내부 맥락에서만 언급, 제목에서는 보편적 언어로 대체 |
+| **제목에 아이디어 과부하 = 클릭 사망** | C 제목: Wall Street + Top Law Firms + 26-Year-Old + Swede + $5.5B AI Company — 5개 앵글이 경쟁. 시청자 뇌가 "이게 누구 영상이야?" 처리하는 동안 스크롤 이탈 |
+| **"No Legal Background" 훅 = 다음 실험 후보** | 언더독 자기투영 유발력이 있고 WTS 39%로 B와 근소한 차이. B 썸네일 + A 제목 조합으로 다음 테스트 고려 가치 있음 |
+
+---
+
 ## 실행 타임라인 (v6 업데이트)
 
 ```

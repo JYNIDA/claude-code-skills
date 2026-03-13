@@ -61,7 +61,7 @@ description: 위클리 회의 준비 및 회의록 정리. YouTube 지표 자동
 | API 호출 | Quota | 수집 데이터 |
 |----------|-------|-------------|
 | `channels.list` (statistics) | 1 | 구독자 수, 총 조회수 |
-| `search.list` (최근 30일 영상) | 100 | 영상 ID 목록 (max 50개) |
+| `search.list` (최근 7일 영상 + 30일 영상) | 100+100 | 이번 주 영상 + 비교용 이전 주 영상 |
 | `videos.list` (batch, 50개 단위) | 1 | 영상별 views, likes, comments, publishedAt |
 | **총 예상 quota** | **~102** | (일일 한도 10,000 중 ~1%) |
 
@@ -70,7 +70,8 @@ description: 위클리 회의 준비 및 회의록 정리. YouTube 지표 자동
 # 1. 채널 통계
 bash scripts/fetch-youtube-data.sh channel_stats "$API_KEY" "$CHANNEL_ID"
 
-# 2. 최근 30일 영상 목록
+# 2. 최근 7일 영상 목록 (이번 주) + 30일 목록 (캐리오버 추적용)
+bash scripts/fetch-youtube-data.sh recent_videos "$API_KEY" "$CHANNEL_ID" 7
 bash scripts/fetch-youtube-data.sh recent_videos "$API_KEY" "$CHANNEL_ID" 30
 
 # 3. 영상별 상세 통계 (ID를 콤마로 연결)
@@ -81,15 +82,30 @@ bash scripts/fetch-youtube-data.sh video_details "$API_KEY" "$VIDEO_IDS"
 
 수집된 데이터로 다음을 계산:
 
-- **Monthly Views**: 최근 30일 영상 조회수 합산
-- **Mega-hits**: 500K+ 조회수 영상 수 (기준은 config에서 변경 가능)
-- **Hits**: 200K-500K 조회수 영상 수
-- **Baseline avg**: 상위 3개 제외한 나머지 영상의 평균 조회수
-- **영상별 성과 등급**:
+**주요 분석 단위: 이번 주 (최근 7일)**
+
+- **Weekly Views (7d)**: 이번 주 발행 영상 조회수 합산
+- **Long-form Views**: 이번 주 롱폼 영상 조회수
+- **Shorts Avg**: 이번 주 쇼츠 평균 조회수
+- **Videos Published**: 이번 주 발행 영상 수 (롱폼 + 쇼츠 구분)
+- **Mega-hits / Hits**: 이번 주 영상 중 500K+ / 200K-500K 영상 수
+
+**캐리오버 영상 (30일 데이터 활용)**:
+- 이전 주 이전에 발행되었지만 여전히 성장 중인 영상 추적
+- 30일 데이터에서 7일 이전 영상 중 WoW 성장률이 높은 영상 식별
+- 캐리오버 테이블: 이전 주 조회수 vs 현재 조회수 vs WoW 성장률
+
+**비교 기준: 이번 주 vs 지난 주**
+- 이번 주 (This Week): 최근 7일 발행 영상
+- 지난 주 (Prev Week): 8~14일 전 발행 영상 (이전 weekly 노트에서 파싱)
+- Delta: 이번 주 - 지난 주 (절대값 + %)
+
+**영상별 성과 등급** (이번 주 영상에만 적용):
   - `MEGA-HIT`: 500K+ views
   - `HIT`: 200K-500K views
   - `BASELINE`: baseline avg의 0.5x ~ 2x 범위
   - `UNDERPERFORMER`: baseline avg의 0.5x 미만
+  - baseline avg 계산: 이번 주 영상 중 상위 N개 제외 나머지 평균
 
 ### 1-C. Slack 프로덕션 현황 (Slack 연결 시)
 
@@ -125,19 +141,20 @@ Slack MCP 도구를 사용하여 프로덕션 진행상황 수집:
 
 ### 2-A. 퍼포먼스 테이블 자동 채우기
 
-- **vs Target**: config의 목표치 대비 현재치 (%, ↑↓)
-- **vs Last Week**: 이전 주 대비 변화 (delta, %)
+- **This Week vs Prev Week**: 이번 주(7d) vs 지난 주(7d) 비교 (delta, %)
+- **vs Target**: config의 목표치 대비 현재치 (%, ↑↓) — 구독자 등 누적 지표에만 적용
 - **Trend**: 최근 4주 추세 (↑ improving / → stable / ↓ declining)
 
 ### 2-B. 이상치 탐지 & 플래그
 
-- baseline avg 대비 **2x 이상** → `POTENTIAL HIT` 플래그
-- baseline avg 대비 **0.5x 이하** → `UNDERPERFORMING` 플래그
-- 이전 주 대비 **±30% 이상** 변동 → `SIGNIFICANT CHANGE` 플래그
+- 이번 주 baseline avg 대비 **2x 이상** → `POTENTIAL HIT` 플래그
+- 이번 주 baseline avg 대비 **0.5x 이하** → `UNDERPERFORMING` 플래그
+- 지난 주 대비 **±30% 이상** 변동 → `SIGNIFICANT CHANGE` 플래그 (Weekly Views, Shorts Avg 등)
 
 ### 2-C. 자동 인사이트
 
-- 주간 요약 1줄 자동 생성 (예: "Strong week — 2 mega-hits pushed Monthly Views 15% above target")
+- 주간 요약 1줄 자동 생성 (예: "Strong week — Weekly Views 64K, 2 long-form + 7 shorts, top performer Rem Koning at 25K in 4 days")
+- 지난 주 대비 컨텍스트 제공 (예: "-60% drop is context-dependent: prev week had Mihail Eric breakout")
 - Top performer 분석 (왜 잘 됐는지 가설)
 - Underperformer 분석 (가능한 원인 가설)
 
@@ -208,10 +225,12 @@ AskUserQuestion을 사용하여 질문:
 1. `~/Desktop/Cowork/meeting-notes/weekly-YYYY-MM-DD-chart.html` 저장
 2. 다크 테마 standalone HTML (Chart.js CDN 사용, 서버 불필요)
 3. 포함 차트:
-   - **KPI Cards**: 구독자, 월간 조회수, 메가히트/히트 수, 베이스라인 평균
-   - **Views by Video**: 가로 막대 차트 (등급별 색상 — 녹색=HIT, 노란색=Potential, 파란색=Baseline, 빨간색=Under)
-   - **포맷별 도넛 차트**: 교수/학자 인터뷰 vs Shorts vs Founder Stories 조회수 비중
-   - **Engagement 차트**: 좋아요/댓글 (Top 6 영상)
+   - **KPI Cards**: 구독자, 주간 조회수(7d), 발행 영상 수, 롱폼 조회수, CTR, 쇼츠 평균
+   - **Views by Video**: 이번 주 발행 영상 가로 막대 차트 (등급별 색상 — 녹색=HIT, 노란색=Potential, 파란색=Baseline, 빨간색=Under)
+   - **Weekly Comparison**: 이번 주 vs 지난 주 비교 (Long-form / Shorts / Total)
+   - **Engagement 차트**: 좋아요 (Top 6 영상)
+   - **포맷별 도넛 차트**: 롱폼 vs 쇼츠 조회수 비중
+   - **Pipeline 테이블**: 프로덕션 파이프라인 상태
    - **Key Insight 박스**: 핵심 분석 1-2줄
 4. `open` 명령으로 브라우저에서 자동 열기
 5. 용도: 노션에 캡처해서 붙여넣기, 회의 화면 공유
@@ -223,8 +242,9 @@ AskUserQuestion을 사용하여 질문:
 ```
 ── Weekly Summary ──────────────────────
 Subscribers: XXX,XXX (target: 1M → XX%)
-Monthly Views: X.XM (vs target: +XX%)
-Mega-hits: X | Hits: X | Underperformers: X
+Weekly Views (7d): XX.XK (vs prev wk: ±XX%)
+Videos: X long + X shorts
+Long-form: XX.XK | Shorts Avg: X.XK
 Top: "Video Title" (XXX,XXX views)
 ────────────────────────────────────────
 Saved: ~/Desktop/Cowork/meeting-notes/weekly-YYYY-MM-DD.md
