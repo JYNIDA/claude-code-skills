@@ -343,9 +343,11 @@
 | **HR/업계 전문 톤** | "HOW TO FIND THE BEST TALENT" | 대중 시청자가 자기 문제로 못 느낌 |
 | **타겟 한정 라벨 (v5)** | "Junior Dev:", "For Beginners" | 해당 안 되는 시청자가 이탈 |
 | **업계 전문 용어 썸네일 (v5)** | "Agentic Engineering 101" | 아직 대중적이지 않은 용어는 이해 장벽 |
-| **소모된 YouTube 공식 (v5)** | "The Mistake X% Make With Y" | 너무 많이 쓰인 템플릿. 신선함 없음 |
+| **소모된 YouTube 공식 (v5)** | "The Mistake X% Make With Y", **"Most People Use It Wrong"** | 너무 많이 쓰인 템플릿. 행동을 구체적으로 묘사하는 것으로 대체: "Use It to Get Answers", "Use It to Finish Tasks" |
 | **실수 지적형 썸네일 (v5)** | "More Agents ≠ Better Code" | 주장/사실은 "아 그렇구나"로 끝남 |
 | **철지난 트렌드 키워드 (v6 신규)** | "STOP USING CHATGPT" | 이미 대중이 다 아는 얘기. "요즘 누가 챗지피티 쓰냐" 반응 → 역효과 |
+| **예측 가능한 반직관 (v6.3 신규)** | "AI 쓰면 학습에 안 좋다 (17% study)" | 대중이 이미 막연히 의심하는 것을 데이터로 확인하는 수준 = 진정한 반직관 아님. NYT/Atlantic이 이미 다 다룬 내러티브는 Hook으로 부적합 |
+| **"education" 키워드 (v6.3 신규)** | "AI in Education", "AI Education Lead" 제목에 삽입 | 기관/학교 느낌 → EO 오디언스 이탈 신호. "learning/learn"으로 대체할 것 |
 | **스테레오타입 비주얼 (v6 신규)** | 아프리카 = 먼지길, 개발도상국 = 빈곤 이미지 | EO의 aspirational 톤과 불일치. 해당 국가 시청자에게 불쾌감 |
 
 #### 좋은 썸네일 카피의 조건 (v6 업데이트)
@@ -440,6 +442,8 @@ CTR 예측: X.XX%
 | **변환 화살표 + Buffett 비유 (v6 신규)** | 썸네일 "CAPITAL → INTELLIGENCE" + 제목 "From Allocating Capital to Allocating Intelligence. Most Founders Aren't Ready" | 기획 단계 — 예측 CTR 5.4%+ | **이론 중신뢰 ★★★☆☆** |
 | **글로브 + 국가명 텍스트 (v6 신규)** | 썸네일: 지구본 위 Kenya, Kazakhstan, India, Nigeria + "TRILLION-DOLLAR COMPANIES WON'T COME FROM SILICON VALLEY" | 기획 단계 | **실험 ★★★☆☆** |
 | **숫자 + 위기 + Top X% 반전** | 썸네일 "Junior Dev: Are We Cooked?" + 제목 "3 Forces Killing Software Careers..." | CTR 6.0%, WTS 32.1% | **보통 ★★★☆☆** |
+| **"Most X. A Few Y." 대비 구조 (v6.3 신규)** | 썸네일 질문형 + 제목 "Most Use It to Finish Tasks. A Few Get Smarter." | EP4에서 최종 제목에 미채택 — 미검증 | **이론 중신뢰 ★★★☆☆** |
+| **질문형 썸네일 + 정체성 열망 제목 (v6.3 EP4 검증)** | 썸네일 "Using AI to Think Less?" + 제목 "How the Top 1% of Learners Use AI to Think Better" | WTS 37.5% (EP4 Set C 우승, 3세트 중 최고) | **고신뢰 ★★★★☆** |
 
 #### 회피 패턴 (v6 업데이트)
 
@@ -460,6 +464,8 @@ CTR 예측: X.XX%
 | 스테레오타입 비주얼 (v6 신규) | 아프리카 = 먼지길/빈곤 이미지 | aspirational 톤 파괴, 해당 국가 시청자 이탈 |
 | **추상 콘셉트를 클릭 드라이버로 (v6.2 신규)** | "Capital → Intelligence", "Allocate Intelligence" | EP3 A/B WTS 24% (최하위). 영상 핵심 인사이트여도 대중적 클릭 드라이버로는 안 먹힘. 내부 콘텐츠용 ≠ 패키징용 |
 | **학술 톤 인트로 (v6.2 신규)** | "I wrote this paper three years ago..." | EP3: 0:00~1:00에서 90%→45% 절벽 이탈. 연구 배경 오프닝 = 리텐션 킬러. 결론/도발을 먼저 배치해야 함 |
+| **Trap/Fear 프레임 < 열망 프레임 (v6.3 EP4 검증)** | "AI Trap Early Adopters Keep Falling Into" (29.5%) vs "Top 1% of Learners Use AI to Think Better" (37.5%) | 학습/교육 게스트에서 fear보다 identity aspiration이 +8%p 우위. 문제 지적 < 정체성 제안 |
+| **"Agent" 키워드 = context-specific (v6.3 EP4 검증)** | "You're Holding Your Agent Back" → EP4 최하위 29.5% | education/learning 콘텐츠에서 agent는 타겟을 좁혀 역효과. productivity/automation 콘텐츠에서 별도 검증 필요. "AI" 키워드가 더 범용적 |
 
 ---
 
@@ -1130,76 +1136,5 @@ Trigger AVOID: -0.15% (entrepreneur, lessons, ceo, advice)
 
 ---
 
-## v6 → v6.1 변경 요약
-
-| 항목 | v6 | v6.1 (Thinking Mode EP2 Drew Bent 기획 적용 결과 반영) |
-|------|------|------|
-| **콘셉트 개수** | 10개 (검증 3-4 / 최적화 3-4 / 실험 2-3) | **15개** (검증 4-5 / 최적화 4-5 / 실험 4-5). 10개에서는 A/B 3세트 선정 시 다양성 부족 |
-| **썸네일 변형 시스템** | 없음 (콘셉트당 1개) | **3 Variation Types** (텍스트 중심 / 하이브리드 / 비주얼 중심). 텍스트만 있으면 "무슨 말인지 모르겠다" 피드백 반영 |
-| **출력 포맷** | 콘셉트 카드 (제목+썸네일 개별) | **Title+Thumbnail 조합 세트** 포맷 추가. Top 콘셉트 × 변형 = 세트 단위 출력 |
-| **검증 사례** | 3개 (Po-Shen Loh, Mihail Eric, Rem Koning) | **4개** (+Drew Bent 기획 케이스) |
-| **인트로 범위 정의** | 암묵적 (60초 이내) | **명시적: 영상 시작 ~ 게스트 자기소개 직전**. 스크립트에서 자기소개 지점만 찾으면 인트로 범위 자동 확정 |
-| **카피 3대 우선순위** | 원칙들이 분산되어 있음 | **구체성 > 시의성 > 궁금증 유발** 3대 우선순위 명시. 모든 카피 판단의 최우선 기준 |
-
----
-
-## v5.1 → v6 변경 요약
-
-| 항목 | v5.1 | v6 (Rem Koning 기획 적용 결과 반영) |
-|------|------|------|
-| **워크플로우 단계** | 8단계 (Step 0-7) | **9단계** — Step 3.5 "인트로 설계 + Three-Combo 정렬" 추가 |
-| **Three-Combo** | 제목-썸네일 호환성만 | **썸네일+제목+인트로 3요소 방향 일치 원칙 확립**. 인트로가 썸네일 약속을 15초 안에 터치해야 함 |
-| **인트로 설계** | 없음 (암묵적으로만) | **인트로 설계 6원칙 + 구조 템플릿(HOOK-EVIDENCE-TWIST-FRAME) + Fear→Aspiration 구조** |
-| **썸네일 원칙** | 10원칙 | **11원칙** (+1초 모바일 가독성 테스트) |
-| **썸네일 비주얼** | 텍스트 카피만 | **비주얼 디렉션 시스템 추가** (K-그래프, 변환화살표, 글로브+국가명, 대비, 숫자, 인물비유 6종) |
-| **스테레오타입** | 없음 | **스테레오타입 회피 원칙 + 대안(국가명 텍스트) 문서화** |
-| **Hook 출처 검증** | 없음 | **숫자/주장의 스크립트 원문 확인 필수화** (10x Revenue 사례로 학습) |
-| **스코어링 가산** | 17개 요소 | **19개 요소** (+Visual-text synergy +0.20%, +Geographic concrete +0.15%) |
-| **스코어링 감산** | 7개 요소 | **10개 요소** (+Stale trend -0.25%, +Stereotype visual -0.20%, +Abstract identity -0.15%) |
-| **호환성 체크** | 10항목 | **13항목** (+1초 가독성, +비주얼 디렉션, +스크립트 숫자 검증) |
-| **검증 패턴** | 5개 | **8개** (+K-그래프+반직관, +변환화살표+Buffett, +글로브+국가명 — 이론 신뢰) |
-| **회피 패턴** | 11개 | **14개** (+철지난 트렌드, +추상적 정체성, +스테레오타입 비주얼) |
-| **검증 사례** | 2개 (Po-Shen Loh, Mihail Eric) | **3개** (+Rem Koning 기획 케이스 — 게시 전 학습 기록) |
-| **트렌딩 키워드** | 8개 | **9개** (+allocate intelligence) |
-| **이터레이션 프로세스** | 없음 | **"티키타카" 반복 대화로 방향 잡은 후 문서 확정** 프로세스 언급 |
-| **피드백 기록** | 12개 필드 | **15개 필드** (+썸네일 비주얼, +인트로 구조, +Three-Combo 평가) |
-
----
-
-## v4 → v5 변경 요약
-
-| 항목 | v4 | v5 (Thinking Mode EP1 A/B 결과 반영) |
-|------|------|------|
-| **Po-Shen Loh 우승 세트** | "Rarest Human Trait" (오기록) | **"RURAL / URBAN" + "AI Will Create New Wealth, But Not Where You Think" (WTS 35.4%)로 보정** |
-| **A/B 테스트** | 1순위 게시 + 백업 교체 | **YouTube 내장 A/B 3세트 동시 테스트. 다른 프레임으로 구성** |
-| **썸네일 원칙** | 7원칙 | **9원칙** (정보 밀도, 타겟 범위 추가) |
-| **제목 원칙** | 7원칙 | **10원칙** ("From X to Y" 변환형 우선, 직접 도발 > 중립 관찰, 파이프 중복 방지 추가) |
-| **검증 패턴** | 자기투영 + AI 키워드 위주 | **새로운 정체성 제안 + 버전 넘버링 + 변환 내러티브 + 직접 도발 (1차 WTS 38%, 2차 WTS 62.7%) 최고신뢰 등록** |
-| **회피 패턴** | 모호한 태그 위주 | **전문 용어, 타겟 한정, 중립 관찰, 소모된 YouTube 공식, 실수 지적(Guilt) 프레임 추가** |
-| **스코어링 모델** | 가산만 | **감산 요소 5개 추가** |
-| **스코어링 가산** | Self-projection +0.30% | **Novel identity +0.50%, Transformation +0.50%, Direct challenge +0.30%, Version numbering +0.30%, Concept partial reveal +0.30% 추가** |
-| **호환성 체크** | 8항목 | **10항목** (타겟 한정 여부, 정보 밀도 추가) |
-| **모니터링 기록** | CTR + 교체 로그 | **Browse features %, Suggested %, Content suggesting 상위 5개, A/B WTS 기록 추가** |
-| **패턴 판정 기준** | CTR 기준만 | **A/B WTS ≥ 35% + CTR ≥ 5% = 고신뢰** |
-| **제목 글자수** | 규칙 없음 | **100자 제한 명시 (YouTube 제한). 80자 이내 이상적** |
-| **트렌딩 키워드** | 없음 | **Layer 5에 트렌딩 키워드 레퍼런스 테이블 추가 (바이럴 강도 ★ 평가)** |
-| **핵심 원칙 (2차 A/B)** | 없음 | **"새로운 정체성 제안 > 실수 지적" 원칙 확립. Aspirational pull > Guilt push** |
-| **썸네일 원칙** | 9원칙 | **10원칙** (새로운 정체성/프레임워크 > 실수 지적 추가) |
-
----
-
-## v6.1 → v6.2 변경 요약
-
-| 항목 | v6.1 | v6.2 (Thinking Mode EP3 Rem Koning 실제 결과 반영) |
-|------|------|------|
-| **"AI-native" 키워드** | ★★☆☆☆ (전문용어 감점) | **★★★★☆ (조건부)** — K-graph + 비전형적 프레이밍("Top 1%")과 조합 시 WTS 44.4%→51.4% 연속 1위. 단독 사용은 여전히 감점 |
-| **인트로 설계 원칙** | 6원칙 | **7원칙** — "학술 게스트: 결론 먼저, 연구 배경 나중" 추가. EP3에서 "I wrote this paper three years ago, Kenya..." 오프닝 → 60초 내 90%→45% 이탈 확인 |
-| **회피 패턴** | 14개 | **16개** — "추상 콘셉트를 클릭 드라이버로" (Capital→Intelligence 24% WTS 최하위) + "학술 톤 인트로" (90%→45% cliff drop) 추가 |
-| **검증 사례 (Case 3)** | Rem Koning 기획 단계 기록 | **실제 결과 반영** — CTR 5.08%, AVD 4:44, 25.91% viewed, 21,454 views (3일), A/B 3라운드 전체 기록, 사망 원인 분석 |
-| **CTR vs 리텐션** | 암묵적으로 CTR 우선 | **명시적 원칙**: CTR이 카피 워크플로우 #1 우선순위. 리텐션은 인트로 설계 단계(Step 3.5)에서 체크하되, 카피 의사결정의 최우선 기준은 CTR |
-| **Three-Combo 미스매치** | 원칙만 존재 | **실패 사례 문서화** — 제목("How AI-Native Companies Operate") vs 인트로("Kenya WhatsApp paper") 미스매치 → 리텐션 붕괴 → 알고리즘 철수 |
-
----
-
 *EO Global Copy Workflow v6.2 — March 8, 2026*
-*Based on: 355-video dataset + Intelligence EP1 (Po-Shen Loh, CTR 6.0~7.3%) + Thinking Mode EP1 (Mihail Eric, CTR 6.0%, A/B 1차 WTS 38%, 2차 WTS 62.7%) + 3회 실전 A/B 테스트 학습 + 4개 영상 397개 댓글 분석 + Intelligence EP2 (Rem Koning, Harvard Business School) 기획 적용 + Thinking Mode EP2 (Drew Bent, Anthropic) 기획 적용 + **Thinking Mode EP3 (Rem Koning) 실제 결과** (CTR 5.08%, A/B 3라운드, 리텐션 실패 분석)*
+*Version history → `eo_copy_changelog.md`*
