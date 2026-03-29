@@ -14,6 +14,27 @@ Built for a global business & tech interview channel exploring how thinkers and 
 | **interview-prep** | Guest research + topic development + question list | `/interview-prep` |
 | **weekly-meeting** | Weekly meeting prep: YouTube analytics + Slack status + meeting notes | `/weekly-meeting` |
 | **my-clarify** | Turn vague content planning into actionable specs | `/my-clarify` |
+| **broll-finder** | Paste a script → find B-roll sources → download → generate source doc | `/broll-finder` |
+
+## Highlight: broll-finder
+
+The fastest way to go from script to downloaded B-roll with source credits:
+
+```
+/broll-finder     → Paste your script, skill extracts scenes automatically
+```
+
+**How it works (5 phases):**
+1. **Script Analysis** — AI extracts scenes and search keywords per shot
+2. **Source Search** — Searches YouTube, news outlets (Reuters, AP, BBC), and image libraries in parallel
+3. **Interactive Loop** — Add keywords, change source type, or paste URLs directly; repeat until satisfied
+4. **Auto Download** — Downloads selected YouTube videos in 4K MP4 via yt-dlp
+5. **Source Doc** — Generates `sources.md` with titles, links, channel credits, and ready-to-use credit lines
+
+**Requirements:**
+- Claude Code installed
+- `yt-dlp` installed (`brew install yt-dlp`)
+- Notion MCP (optional, for Notion upload)
 
 ## Highlight: thinking-mode-pipeline
 
