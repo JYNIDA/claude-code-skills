@@ -1,6 +1,10 @@
-# EO Global Copy Workflow v6.2
+# EO Global Copy Workflow v6.4
 ## 데이터 기반 제목·썸네일·인트로 최적화 프로세스
 
+> v6.3 → v6.4 업데이트: Jacob Bank (Relay.app) 에피소드 게시 후 실제 성과 데이터 반영
+> 핵심 추가: 알고리즘 모멘텀 이중 게이트(Gate 1 CTR + Gate 2 배포 확장 분리), 니치 SaaS 사례 회피 패턴, A/B 프레임 미분화 패턴, Gate 2 스코어링 요소
+> Jacob Bank 결과: CTR 5.54%, 노출 216K, 조회수 19K — Gate 1 통과, Gate 2 실패. D+0→D+4 -87% 급락. A/B 50:50 동점(세트 프레임 동일)
+> v6.2 → v6.3 업데이트: EP4 A/B 테스트 결과 반영 (질문형+정체성 열망 WTS 37.5% 우승, Trap/Fear 프레임 29.5% 최하위)
 > v6.1 → v6.2 업데이트: Thinking Mode EP3 (Rem Koning, Harvard Business School) **게시 후 실제 성과 데이터** 반영
 > 핵심 추가: 리텐션 체크포인트(CTR보다 리텐션 우선), 학술 게스트 인트로 리스크 원칙, "AI-native" 키워드 등급 상향, 추상 콘셉트 클릭 드라이버 회피 패턴, 시의성 없는 게시의 리스크
 > EP3 결과: CTR 5.08%, 노출 283K, 조회수 21.4K — BUT 리텐션 25.91%(4:44/18:17)로 D+2에 급사. 원인: 인트로-제목 불일치
@@ -254,6 +258,28 @@
 
 > **실전 판단법:** 카피를 쓴 후 자문 — ① 이 문장이 다른 AI 영상에도 붙을 수 있나? (구체성 실패) ② 3개월 후에도 똑같이 먹히나? (시의성 없음) ③ 읽고 나서 "그래서?" 가 아니라 "왜?" 가 나오나? (궁금증 실패)
 
+#### 알고리즘 모멘텀 이중 게이트 (v6.4 신규)
+
+> **CTR이 좋아도 조회수가 낮은 이유 — YouTube는 두 번 판단한다.**
+>
+> 현재 workflow는 Gate 1 최적화에 집중되어 있다. Gate 2는 별도로 체크해야 한다.
+
+| 게이트 | 질문 | 주요 신호 | 실패 사례 |
+|--------|------|----------|----------|
+| **Gate 1: 클릭 게이트** | 썸네일/제목을 본 사람이 클릭하는가? | CTR | — |
+| **Gate 2: 배포 확장 게이트** | 클릭한 사람이 보고 반응하는가? → 더 많은 사람에게 배포할 가치가 있는가? | 30초 리텐션, 댓글/좋아요율, 주제 광역성 | Jacob Bank: CTR 5.54% ✓, 노출 216K에서 멈춤 |
+
+**Gate 2 체크리스트 (콘셉트 개발 시 반드시 실행):**
+
+| 체크 | 판단 기준 | Gate 2 통과 예시 | Gate 2 실패 예시 |
+|------|----------|----------------|----------------|
+| **주제 광역성** | 이 영상을 추천받을 수 있는 잠재 시청자가 충분히 넓은가? | "AI 시대 개발자의 정체성" — 모든 개발자 | "Relay.app으로 마케팅 자동화" — 마케팅+AI 도구 유저만 |
+| **논쟁 유발 가능성** | 이 주제로 찬반 댓글이 폭발할 수 있는가? | "Most Engineers Aren't Ready" — 자격 논쟁 | "He Runs Marketing with 40 AI Agents" — 논쟁축 없음 |
+| **자기투영 범위** | "나한테 해당된다"고 느끼는 시청자가 얼마나 넓은가? | 모든 개발자/창업자 | 특정 SaaS 도구 사용자 |
+| **재추천 적합성** | 알고리즘이 처음 본 시청자와 "비슷한 사람"에게 계속 추천할 수 있는가? | 직군 정체성 영상 → 같은 직군 전체 타겟 가능 | 도구 사례 영상 → 해당 도구 잠재 사용자만 |
+
+> **핵심 원칙:** Gate 1(CTR)이 통과해도 Gate 2 체크에서 2개 이상 실패하면, 노출 확장이 막혀 조회수 상한이 낮아진다. 콘셉트 선택 단계에서 Gate 2를 먼저 통과하는 주제인지 확인할 것.
+
 | 카테고리 | 개수 | 설명 |
 |---------|:---:|------|
 | 검증 콘셉트 | 4-5개 | EO에서 성과 검증된 패턴 |
@@ -466,6 +492,8 @@ CTR 예측: X.XX%
 | **학술 톤 인트로 (v6.2 신규)** | "I wrote this paper three years ago..." | EP3: 0:00~1:00에서 90%→45% 절벽 이탈. 연구 배경 오프닝 = 리텐션 킬러. 결론/도발을 먼저 배치해야 함 |
 | **Trap/Fear 프레임 < 열망 프레임 (v6.3 EP4 검증)** | "AI Trap Early Adopters Keep Falling Into" (29.5%) vs "Top 1% of Learners Use AI to Think Better" (37.5%) | 학습/교육 게스트에서 fear보다 identity aspiration이 +8%p 우위. 문제 지적 < 정체성 제안 |
 | **"Agent" 키워드 = context-specific (v6.3 EP4 검증)** | "You're Holding Your Agent Back" → EP4 최하위 29.5% | education/learning 콘텐츠에서 agent는 타겟을 좁혀 역효과. productivity/automation 콘텐츠에서 별도 검증 필요. "AI" 키워드가 더 범용적 |
+| **니치 SaaS 사례 중심 (v6.4 신규)** | "He Runs His Entire Marketing Team with 40 AI Agents \| Relay.app" | Jacob Bank: CTR 5.54% ✓, 조회수 19K. Gate 1 통과, Gate 2 실패. 특정 도구/워크플로우 사례는 자기투영 범위가 너무 좁아 알고리즘 배포 확장 불가. D+0→D+4 -87% 급락 |
+| **A/B 세트 프레임 미분화 (v6.4 신규)** | 세트 A: "AI is way Underhyped. He Runs...40 AI Agents" / 세트 B: "My Marketing Team? It's Me & 40 AI Agents" | Jacob Bank: WTS 50:50 완전 동점. 키워드는 달라도 "40 AI Agents" 같은 프레임 → YouTube 인사이트 없음. A/B 세트는 프레임(정체성 vs 반직관 vs 글로벌 등) 자체가 달라야 함 |
 
 ---
 
@@ -699,6 +727,18 @@ Base:                      3.11%
 - Spam-attracting generic:-0.15%   (범용적 성공/부자 키워드)  ← v5.1
 - Abstract identity:      -0.15%   (1초 가독성 실패 정체성)  ← v6 신규
 - Trigger AVOID:          -0.15%   (entrepreneur, lessons, ceo, advice)
+
+Gate 2 알고리즘 모멘텀 보너스/감산 (v6.4 신규):
++ Broad topic identity:  +0.30%   (직군/세대/역할 정체성 주제 — 모든 개발자, 모든 창업자)
+                                   근거: Mihail Eric(정체성 주제) CTR 6.0%+, Jacob Bank(도구 사례) 노출 멈춤 비교
++ High debate potential: +0.20%   (찬반이 격렬하게 갈리는 주제 — 댓글 폭발 → 알고리즘 연료)
+                                   (1.5-E 논쟁도 ★★★★★ 연동)
+
+- Niche tool/case study: -0.30%   (특정 SaaS 도구, 특정 워크플로우 사례 중심)
+                                   근거: Jacob Bank CTR 5.54%이나 노출 216K에서 멈춤
+                                   알고리즘이 타겟을 좁게 인식 → 배포 확장 없음
+- Same-frame A/B:        -0.15%   (A/B 세트 프레임이 동일 — YouTube 인사이트 불가)
+                                   근거: Jacob Bank WTS 50:50 동점. "40 AI Agents" 양쪽 동일 프레임
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 

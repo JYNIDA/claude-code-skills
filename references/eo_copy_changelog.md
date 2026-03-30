@@ -6,6 +6,28 @@
 
 ---
 
+## v6.3 → v6.4 변경 요약
+
+| 항목 | v6.3 | v6.4 (Jacob Bank / Relay.app 에피소드 실제 결과 반영) |
+|------|------|------|
+| **핵심 추가 개념** | — | **알고리즘 모멘텀 이중 게이트** — CTR(Gate 1)과 배포 확장(Gate 2) 분리. CTR이 좋아도 Gate 2 실패 시 노출 상한이 낮아짐 |
+| **Gate 2 체크리스트** | 없음 | 4개 항목 추가: 주제 광역성 / 논쟁 유발 가능성 / 자기투영 범위 / 재추천 적합성 |
+| **회피 패턴** | 14개 | **16개** — 니치 SaaS 사례 중심 (Jacob: CTR 5.54% 통과, 조회수 19K 상한) + A/B 세트 프레임 미분화 (WTS 50:50 동점, 인사이트 없음) |
+| **CTR 스코어링** | Gate 1 요소만 | **Gate 2 요소 추가** — +Broad topic identity(+0.30%), +High debate potential(+0.20%), -Niche tool/case study(-0.30%), -Same-frame A/B(-0.15%) |
+| **Jacob Bank 실제 결과** | — | CTR 5.54%, 노출 216K, 조회수 19K. D+0→D+4 -87% 급락. A/B 50:50 동점 |
+
+---
+
+## v6.2 → v6.3 변경 요약
+
+| 항목 | v6.2 | v6.3 (EP4 Drew Bent A/B 실제 결과 반영) |
+|------|------|------|
+| **검증 패턴 추가** | — | **질문형 썸네일 + 정체성 열망 제목** — "Using AI to Think Less?" + "How the Top 1% of Learners Use AI to Think Better" WTS 37.5% (3세트 중 1위) |
+| **회피 패턴 추가** | 14개 | **4개 추가** — 예측 가능한 반직관 / "education" 키워드 / "Most X. A Few Y." 미검증 구조 / Trap-Fear 프레임 (29.5% 최하위) / "Agent" 키워드 context-specific |
+| **핵심 학습** | — | 학습/교육 게스트에서 Fear 프레임(29.5%) < Identity Aspiration 프레임(37.5%). +8%p 차이 확인 |
+
+---
+
 ## v6.1 → v6.2 변경 요약
 
 | 항목 | v6.1 | v6.2 (Thinking Mode EP3 Rem Koning 실제 결과 반영) |
