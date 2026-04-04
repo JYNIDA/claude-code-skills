@@ -84,9 +84,36 @@ Record in Canvas:
 
 ### Phase 4: MEASURE
 
+#### Data Collection Methods
+
+Two collection methods work together:
+
+**1. YouTube Analytics API** -- views, watch time, subs, engagement, retention
+**2. Studio Browse** -- Impressions, CTR, traffic source %, A/B thumbnail data
+
+Studio Browse uses a headless browser (gstack browse) with imported Google cookies to read data directly from YouTube Studio UI. This bypasses YouTube's API restrictions on Impressions/CTR.
+
+**Prerequisites**: Each team member must complete a one-time browser auth setup (see "Browser Auth Setup" section below).
+
+#### Studio Browse Flow
+
+```
+1. goto "https://studio.youtube.com/video/{VIDEO_ID}/analytics/tab-reach_viewers/period-default"
+2. Wait 3s for data load
+3. Screenshot + read: Impressions, CTR, unique viewers
+4. Read traffic source breakdown (Browse %, Suggested %, Search %, External %)
+5. Check A/B thumbnail test status and results
+```
+
+If browse session is expired (Google login page appears), post Slack alert:
+```
+Browse session expired. Run /setup-browser-cookies + handoff to re-authenticate.
+```
+
 #### Hourly Tracking (First 24h)
 
 Poll YouTube Analytics API hourly. Cumulative totals minus previous = delta.
+Poll Studio Browse for CTR + Impressions alongside API calls.
 
 **Adaptive stop**: CTR variance < 0.3% for 3 consecutive hours = stabilized. Post Slack alert.
 
@@ -142,26 +169,27 @@ filters=video==VIDEO_ID
 
 **API limitations:**
 - Hourly = cumulative polling trick (native = daily)
-- A/B thumbnail results: Studio UI only
-- CTR by traffic source: unreliable via API
+- A/B thumbnail results: Studio UI only → now collected via Studio Browse
+- CTR by traffic source: unreliable via API → now collected via Studio Browse
 
 #### Manual Fallback
-Producer fills Canvas measurement table. Captures API-exclusive data: A/B Watch Time Share, traffic source CTR.
+If Studio Browse fails (cookie expired, UI layout changed), producer fills Canvas measurement table manually. Only remaining manual item: **A/B Watch Time Share** (requires navigating A/B test detail tab, which is complex to automate reliably).
 
 #### Slack Alert (after Auto metrics are filled)
 
-After `impact lab measure` fills the Auto rows in the Canvas, post this alert to `#gl-youtube-operations`:
+After `impact lab measure` fills both API + Browse data in the Canvas, post this alert to `#gl-youtube-operations`:
 
 ```
-D+7 Auto metrics collected for [Episode Name].
+D+7 metrics collected for [Episode Name].
 Canvas updated: [canvas link]
 
-Studio에서 아래 항목 확인하고 빈 칸 채워주세요:
-- Impressions
-- CTR
-- Browse % / Suggested % / Search %
-- A/B winner (Set __)
-- A/B Watch Time Share
+Auto-collected (API + Studio Browse):
+✓ Views, watch time, subs, engagement, retention
+✓ Impressions, CTR, traffic sources
+✓ A/B thumbnail status
+
+Studio에서 아래 항목만 확인해주세요:
+- A/B Watch Time Share (A/B 테스트 상세 탭)
 
 다 채우면 "impact lab report" 실행해서 리포트 생성합니다.
 ```
@@ -250,25 +278,38 @@ Created by `impact lab start`:
 
 ### What You Do
 
-1. **Before publish**: Fill Set A/B/C in the Slack Canvas (title, thumbnail description, intro flow, hypothesis)
-2. **After publish**: Record hourly CTR from YouTube Studio until it stabilizes
-3. **D+7**: Claude sends a Slack alert. Fill in Manual items from Studio (Impressions, CTR, traffic sources, A/B results)
+1. **One-time setup**: Run `/setup-browser-cookies` + `handoff` to authenticate (see Browser Auth Setup below)
+2. **Before publish**: Fill Set A/B/C in the Slack Canvas (title, thumbnail description, intro flow, hypothesis)
+3. **D+7**: Claude sends a Slack alert. Fill in **A/B Watch Time Share** only (everything else is auto-collected)
 4. **Read the report**: Claude auto-generates analysis. Review lessons and apply to next episode.
 
 ### What Claude Does
 
 1. Creates Canvas and shares link in `#gl-youtube-operations`
-2. Collects D+7 Auto metrics via YouTube API (views, watch time, subs, engagement, retention)
-3. Sends Slack alert when Manual items are needed
-4. Auto-generates Week 1 Report (D+7) and Final Report (D+14)
-5. Calculates derived metrics (sub conversion rate, impact scorecard)
+2. Collects metrics via YouTube API (views, watch time, subs, engagement, retention)
+3. Collects metrics via Studio Browse (Impressions, CTR, traffic sources, A/B status)
+4. Tracks hourly CTR via Studio Browse until stabilized
+5. Auto-generates Week 1 Report (D+7) and Final Report (D+14)
+6. Calculates derived metrics (sub conversion rate, impact scorecard)
 
 ### Auto vs. Manual Data
 
-| Source | Metrics | Why |
+| Source | Metrics | How |
 |--------|---------|-----|
-| **Auto** (YouTube API) | Views, avg duration, avg view %, subs gained/lost, likes, comments, shares, retention curve | API provides these |
-| **Manual** (YouTube Studio) | Impressions, CTR, A/B Watch Time Share, A/B winner, traffic source % | YouTube blocks these from API |
+| **Auto** (YouTube API) | Views, avg duration, avg view %, subs gained/lost, likes, comments, shares, retention curve | API call |
+| **Auto** (Studio Browse) | Impressions, CTR, traffic source %, A/B thumbnail status, unique viewers | Headless browser reads YouTube Studio UI |
+| **Manual** (YouTube Studio) | A/B Watch Time Share | Requires navigating A/B test detail tab |
+
+### Browser Auth Setup (One-Time per Team Member)
+
+Each team member needs to authenticate once so Claude can access YouTube Studio on their behalf:
+
+1. Run `/setup-browser-cookies` in Claude Code
+2. In the picker UI, import `youtube.com` + `google.com` cookies from Chrome
+3. If Google asks for password (cookie session mismatch), Claude runs `handoff`
+4. A browser window opens -- log into your Google account with YouTube Studio access
+5. Tell Claude "done" -- Claude runs `resume` and verifies Studio access
+6. Cookies last ~2 weeks. Re-run this setup when session expires.
 
 ### How to Write a Good Hypothesis
 
@@ -290,4 +331,4 @@ YouTube Analytics API:
 - **OAuth consent screen**: External
 - **Scopes**: `yt-analytics.readonly`, `yt-analytics-monetary.readonly`, `youtube.readonly`
 - **Channels**: EO Global + EO Korea (both authenticated)
-- **Limitation**: Impressions/CTR not available via API. YouTube intentionally blocks this. Use Studio UI.
+- **Limitation**: Impressions/CTR not available via API. YouTube intentionally blocks this. Collected via Studio Browse (headless browser accessing Studio UI).
