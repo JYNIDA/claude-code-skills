@@ -62,13 +62,15 @@ D+14: Claude auto-generates Final Report
 
 ### Phase 2: HYPOTHESIZE (Notion)
 
-Claude creates a Notion page via `notion-create-pages` (private section, Korean).
+Claude creates a row in the **2Q database** via `notion-create-pages` with `data_source_id`.
 
-**Page structure -- top section is the hypothesis (producer fills):**
+- **Data source ID**: `33874768-ec37-80e4-9c37-000bea9f211e` (2Q table)
+- **Name format**: `[TTM] ep.N - Guest Name` / `[FF] Company - Founder Name`
+- No "Media Impact Lab" prefix in the title -- episode name only
+
+**Page content -- top section is the hypothesis (producer fills):**
 
 ```
-# Media Impact Lab: [Series] EP[N] -- [Guest Name]
-
 ## 1. 가설
 
 ### Set A
@@ -97,9 +99,12 @@ Claude creates a Notion page via `notion-create-pages` (private section, Korean)
 
 The hypothesis section is the core. The rest of the page is filled by Claude.
 
-After creating the Notion page, post link to `#gl-youtube-operations` via Slack.
+After creating the DB row:
+1. Search `#request-썸네일` for guest name -- if thumbnail thread exists, include permalink in Slack message
+2. Post link to `#gl-youtube-operations` via Slack (bot token, not MCP)
 
 **Notion parent page**: `33874768ec3780ccb297e2e3f0bb208a` (Media Impact Lab)
+**2Q Data source ID**: `33874768-ec37-80e4-9c37-000bea9f211e`
 **Guide page**: `33874768ec3780259b7ff183bb3a7e10`
 
 ---
