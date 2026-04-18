@@ -62,9 +62,9 @@ def cmd_login():
         print("→ Sign into the Google account that manages EO Global.")
         print("→ Wait until you see YouTube Studio dashboard.")
         print("→ Script will auto-detect login and close the browser.")
-        print("Polling for login (timeout 10 min)...")
+        print("Polling for login (timeout 30 min)...")
 
-        deadline = time.time() + 600
+        deadline = time.time() + 1800
         while time.time() < deadline:
             url = page.url
             if "studio.youtube.com/channel/" in url:
