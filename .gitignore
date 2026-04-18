@@ -1,6 +1,10 @@
 # Secrets
 **/config.json
 
+# Playwright persistent browser profile (Google session cookies)
+lib/youtube-studio/pw-profile/
+**/pw-profile/
+
 # macOS
 .DS_Store
 **/.DS_Store
@@ -34,3 +38,4 @@ geo-technical
 .claude/
 skills-lock.json
 broll-finder/
+.gstack/
