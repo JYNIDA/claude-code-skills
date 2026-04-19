@@ -39,3 +39,7 @@ geo-technical
 skills-lock.json
 broll-finder/
 .gstack/
+
+# Media Impact Lab moved to standalone repo (JYNIDA/media-impact-lab)
+media-impact-lab/
+lib/youtube-studio/pw-profile/
